@@ -1,4 +1,10 @@
-Supervoxel segmentation tool enables the segmentation of a point cloud into boundary preserving super voxels. Boundary preservation is achieved by incorporating cos distance between the normal vectors in the objective function. This source code is based on a recent [ISPRS paper](https://www.sciencedirect.com/science/article/pii/S0924271618301370) and the provided [source code](https://github.com/yblin/Supervoxel-for-3D-point-clouds). Currently we only provide a python wrapper for a single function, but other functiones can be added by changing the `supervoxel.i` file.
+# Supervoxel segmentation tool
+This python library enables the segmentation of a point cloud into boundary preserving super voxels. Boundary 
+preservation is achieved by incorporating cosine distance between the normal vectors in the objective function. This 
+source code is based on the [ISPRS paper](https://www.sciencedirect.com/science/article/pii/S0924271618301370) 
+by Lin et al. (2018) and the provided [source code](https://github.com/yblin/Supervoxel-for-3D-point-clouds). Currently,
+we only provide a python wrapper for a single function, but other functions can be added by adapting the 
+`supervoxel.i` file.
 
 <pre><code>
 <i>class</i> <b>supervoxel.computeSupervoxel(input_file, k_neighbors, resolution, save_file)</b>
@@ -22,3 +28,6 @@ Supervoxel segmentation tool enables the segmentation of a point cloud into boun
   same label belong to one supervoxel) 
 
 </code></pre>
+
+> [1] Lin, Y., Wang, C., Zhai, D., Li, W., & Li, J. (2018). Toward better boundary preserved supervoxel segmentation 
+> for 3D point clouds. ISPRS Journal of Photogrammetry and Remote Sensing, 143, 39–47. https://doi.org/10.1016/j.isprsjprs.2018.05.004
