@@ -16,7 +16,7 @@ description = "Description of ModuleA"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.11"
 keywords = ["ONE", "TWO"]
-license = {text = "Proprietary"} # To be changed once released
+license = {file = "LICENSE"} # To be changed once released
 classifiers = [ # https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#classifiers
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -42,13 +42,3 @@ Documentation = "https://readthedocs.org"
 Repository = "https://github.com/me/spam.git"
 Issues = "https://github.com/me/spam/issues"
 Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
-
-#[project.optional-dependencies]
-#doc = ["sphinx"]
-#dev = [
-#    "black",  # Code formatter to make it consistant with PEP rules
-#    "flake8", # Code linter: Analyzes source code for errors, vulnerabilities, and stylistic issues
-#]
-#
-#[project.scripts]
-#moduleA-cli = "ModuleA.cli:main_cli"
