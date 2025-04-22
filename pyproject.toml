@@ -1,10 +1,12 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools_scm>=8", "wheel", "cmake", "swig", "numpy"]
-build-backend = "setuptools.build_meta"
+# scikit-build-core already bundles wheels for CMake & Ninja, so no need to list them.
+requires = ["scikit-build-core>=0.11", "swig>=4.3", "numpy ~=2.0"]
+build-backend = "scikit_build_core.build"
 
 [project]
 name = "supervoxel"
-version = "0.1.0"
+version = "0.1.2"
+description     = "Fast point‑cloud tiling with PCL, exposed to Python via SWIG"
 authors = [
     {name = "Zan Gojcic"},
     {name = "Nicholas Meyer", email = "meyernic@ethz.ch"},
@@ -12,33 +14,33 @@ authors = [
 maintainers = [
     {name = "Nicholas Meyer", email = "meyernic@ethz.ch"},
 ]
-description = "Description of ModuleA"
-readme = {file = "README.md", content-type = "text/markdown"}
-requires-python = ">=3.11"
-keywords = ["ONE", "TWO"]
-license = {file = "LICENSE"} # To be changed once released
-classifiers = [ # https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#classifiers
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
 
-    "Private :: Do Not Upload" # REMOVE BEFORE FLIGHT -- PyPI will always reject packages with classifiers beginning with Private ::
+keywords = ["point‑cloud", "tiling", "PCL", "SWIG", "C++"]
+
+license = { file = "LICENSE" }
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: C++",
+  "Operating System :: OS Independent"
 ]
 
 dependencies = [
-
+    "numpy~=2.0"
 ]
 
-[tool.setuptools]
-packages = ["supervoxel"]
-
-[tool.setuptools.package-dir]
-supervoxel = "src/supervoxel"
-
 [project.urls]
-Homepage = "https://example.com"
-Documentation = "https://readthedocs.org"
-Repository = "https://github.com/me/spam.git"
-Issues = "https://github.com/me/spam/issues"
-Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+Homepage       = "https://github.com/me/pc-tiling"
+Documentation  = "https://readthedocs.org/projects/pc-tiling"
+Repository     = "https://github.com/me/pc-tiling"
+Issues         = "https://github.com/me/pc-tiling/issues"
+Changelog      = "https://github.com/me/pc-tiling/blob/main/CHANGELOG.md"
+
+
+# ───────── scikit‑build‑core options ──────────────────────────────
+[tool.scikit-build]
+cmake.source-dir = "."        # <- dotted name, not hyphen
